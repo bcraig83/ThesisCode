@@ -1,0 +1,23 @@
+package ie.lyit.analysis.factory;
+
+import https.www_owasp_org.index_php.owasp_dependency_check.Analysis.Dependencies;
+import https.www_owasp_org.index_php.owasp_dependency_check.Analysis.Dependencies.Dependency;
+
+public class MultipleDependenciesFactory implements Factory<Dependencies> {
+
+	private DependenciesFactory dependenciesFactory = new DependenciesFactory();
+
+	private Factory<Dependency> dependencyFactory = new DependencyFactory();
+
+	@Override
+	public Dependencies create() {
+
+		Dependencies result = dependenciesFactory.create();
+
+		result.getDependency().add(dependencyFactory.create());
+		result.getDependency().add(dependencyFactory.create());
+		result.getDependency().add(dependencyFactory.create());
+
+		return result;
+	}
+}

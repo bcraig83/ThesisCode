@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="https://www.owasp.org/index.php/OWASP_Dependency_Check">
+	<xs:element name="analysis">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="projectInfo">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:string" name="name"/>
+							<xs:element type="xs:string" name="reportDate"/>
+							<xs:element type="xs:string" name="credits"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="dependencies">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="dependency" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:string" name="fileName"/>
+										<xs:element type="xs:string" name="filePath"/>
+										<xs:element type="xs:string" name="md5"/>
+										<xs:element type="xs:string" name="sha1"/>
+										<xs:element name="analysisExceptions" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="exception">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="message"/>
+																<xs:element name="stackTrace">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="trace" maxOccurs="unbounded" minOccurs="0"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="innerException">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="message"/>
+																			<xs:element name="stackTrace">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="trace" maxOccurs="unbounded" minOccurs="0"/>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element type="xs:string" name="description" minOccurs="0"/>
+										<xs:element type="xs:string" name="license" minOccurs="0"/>
+										<xs:element name="relatedDependencies" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="relatedDependency" maxOccurs="unbounded" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="filePath"/>
+																<xs:element type="xs:string" name="sha1"/>
+																<xs:element type="xs:string" name="md5"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="evidenceCollected">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="evidence" maxOccurs="unbounded" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="source"/>
+																<xs:element type="xs:string" name="name"/>
+																<xs:element type="xs:string" name="value"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="identifiers" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="identifier" maxOccurs="unbounded" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="name"/>
+																<xs:element type="xs:anyURI" name="url" minOccurs="0"/>
+															</xs:sequence>
+															<xs:attribute type="xs:string" name="type" use="optional"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="vulnerabilities" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="vulnerability" maxOccurs="unbounded" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="name"/>
+																<xs:element type="xs:float" name="cvssScore"/>
+																<xs:element type="xs:string" name="severity"/>
+																<xs:element type="xs:string" name="cwe" minOccurs="0"/>
+																<xs:element type="xs:string" name="description"/>
+																<xs:element name="references">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="reference" maxOccurs="unbounded" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="source"/>
+																						<xs:element type="xs:string" name="url"/>
+																						<xs:element type="xs:string" name="name"/>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="vulnerableSoftware">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="software" maxOccurs="unbounded" minOccurs="0">
+																				<xs:complexType>
+																					<xs:simpleContent>
+																						<xs:extension base="xs:string">
+																							<xs:attribute type="xs:string" name="allPreviousVersion" use="optional"/>
+																						</xs:extension>
+																					</xs:simpleContent>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute type="xs:string" name="type"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

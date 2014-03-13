@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<analysis xmlns="https://www.owasp.org/index.php/OWASP_Dependency_Check">
+    <projectInfo>
+        <name>antlr</name>
+        <reportDate>Feb 8, 2014 11:35:44 AM</reportDate>
+        <credits>This report contains data retrieved from the National Vulnerability Database: http://nvd.nist.gov</credits>
+    </projectInfo>
+    <dependencies>
+        <dependency>
+            <fileName>antlr-4.0-complete.jar</fileName>
+            <filePath>/home/bcraig/Documents/Thesis/Analysis/reports/antlr/Source/antlr-4.0-complete.jar</filePath>
+            <md5>1D2F8D9C82544930188BB50F83E2310A</md5>
+            <sha1>6186FB2D530FA822251224250CBF55A238F248AC</sha1>
+            <description>StringTemplate is a java template engine for generating source code,
+web pages, emails, or any other formatted text output.
+
+StringTemplate is particularly good at multi-targeted code generators,
+multiple site skins, and internationalization/localization. 
+
+It evolved over years of effort developing jGuru.com. 
+
+StringTemplate also generates the stringtemplate website: http://www.stringtemplate.org
+and powers the ANTLR v3 code generator. Its distinguishing characteristic 
+is that unlike other engines, it strictly enforces model-view separation.
+
+Strict separation makes websites and code generators more flexible
+and maintainable; it also provides an excellent defense against malicious
+template authors.
+
+There are currently about 600 StringTemplate source downloads a month.
+    </description>
+            <license>BSD licence: http://antlr.org/license.html</license>
+            <evidenceCollected>
+                <evidence>
+                    <source>file</source>
+                    <name>name</name>
+                    <value>antlr-4.0-complete</value>
+                </evidence>
+                <evidence>
+                    <source>jar</source>
+                    <name>package name</name>
+                    <value>abego</value>
+                </evidence>
+                <evidence>
+                    <source>jar</source>
+                    <name>package name</name>
+                    <value>antlr</value>
+                </evidence>
+                <evidence>
+                    <source>jar</source>
+                    <name>package name</name>
+                    <value>compiler</value>
+                </evidence>
+                <evidence>
+                    <source>jar</source>
+                    <name>package name</name>
+                    <value>grammar</value>
+                </evidence>
+                <evidence>
+                    <source>jar</source>
+                    <name>package name</name>
+                    <value>gui</value>
+                </evidence>
+                <evidence>
+                    <source>jar</source>
+                    <name>package name</name>
+                    <value>model</value>
+                </evidence>
+                <evidence>
+                    <source>jar</source>
+                    <name>package name</name>
+                    <value>recognizer</value>
+                </evidence>
+                <evidence>
+                    <source>jar</source>
+                    <name>package name</name>
+                    <value>runtime</value>
+                </evidence>
+                <evidence>
+                    <source>jar</source>
+                    <name>package name</name>
+                    <value>st</value>
+                </evidence>
+                <evidence>
+                    <source>jar</source>
+                    <name>package name</name>
+                    <value>stringtemplate</value>
+                </evidence>
+                <evidence>
+                    <source>jar</source>
+                    <name>package name</name>
+                    <value>target</value>
+                </evidence>
+                <evidence>
+                    <source>jar</source>
+                    <name>package name</name>
+                    <value>tool</value>
+                </evidence>
+                <evidence>
+                    <source>jar</source>
+                    <name>package name</name>
+                    <value>tree</value>
+                </evidence>
+                <evidence>
+                    <source>jar</source>
+                    <name>package name</name>
+                    <value>treelayout</value>
+                </evidence>
+                <evidence>
+                    <source>Manifest</source>
+                    <name>Implementation-Title</name>
+                    <value>ANTLR 4 Tool</value>
+                </evidence>
+                <evidence>
+                    <source>Manifest</source>
+                    <name>Implementation-Vendor</name>
+                    <value>ANTLR</value>
+                </evidence>
+                <evidence>
+                    <source>Manifest</source>
+                    <name>Implementation-Vendor-Id</name>
+                    <value>org.antlr</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>artifactid</name>
+                    <value>abego.treelayout.core</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>artifactid</name>
+                    <value>abego.treelayout.core</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>artifactid</name>
+                    <value>antlr-runtime</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>artifactid</name>
+                    <value>antlr-runtime</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>artifactid</name>
+                    <value>antlr4</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>artifactid</name>
+                    <value>antlr4</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>artifactid</name>
+                    <value>ST4</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>artifactid</name>
+                    <value>ST4</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>artifactid</name>
+                    <value>stringtemplate</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>artifactid</name>
+                    <value>stringtemplate</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>description</name>
+                    <value>A framework for constructing recognizers, compilers, and translators from grammatical descriptions containing Java, C#, C++, or Python actions.</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>description</name>
+                    <value>Efficient and customizable TreeLayout Algorithm in Java.</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>description</name>
+                    <value>StringTemplate is a java template engine for generating source code,
+web pages, emails, or any other formatted text output.
+
+StringTemplate is particularly good at multi-targeted code generators,
+multiple site skins, and internationalization/localization. 
+
+It evolved over years of effort developing jGuru.com. 
+
+StringTemplate also generates the stringtemplate website: http://www.stringtemplate.org
+and powers the ANTLR v3 code generator. Its distinguishing characteristic 
+is that un...</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>description</name>
+                    <value>The ANTLR 4 grammar compiler.</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>groupid</name>
+                    <value>abego.treelayout</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>groupid</name>
+                    <value>abego.treelayout</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>groupid</name>
+                    <value>antlr</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>groupid</name>
+                    <value>antlr</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>name</name>
+                    <value>abego TreeLayout Core</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>name</name>
+                    <value>ANTLR 3 Runtime</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>name</name>
+                    <value>ANTLR 4 Tool</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>name</name>
+                    <value>ANTLR StringTemplate</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>name</name>
+                    <value>StringTemplate 4</value>
+                </evidence>
+                <evidence>
+                    <source>pom</source>
+                    <name>organization name</name>
+                    <value>abego Software GmbH, Germany</value>
+                </evidence>
+            </evidenceCollected>
+        </dependency>
+    </dependencies>
+</analysis>
