@@ -47,6 +47,7 @@ public class ProjectSummaryParser {
 			projectMap.put(project.getName(), project);
 		}
 
+		@SuppressWarnings("unused")
 		String header = deserializer.getStoredLines().get(0).getContent();
 		//printHeader(header);
 		deserializer.close(true);
@@ -54,11 +55,13 @@ public class ProjectSummaryParser {
 		System.out.println("Project map size: " + projectMap.size());
 	}
 
+	@SuppressWarnings("unused")
 	private void printHeader(String header) {
 		System.out.println("HEADER: " + header);
 
 	}
 
+	@SuppressWarnings("unused")
 	private void print(ProjectDTO project) {
 		System.out.println("---------------------------");
 		// System.out.println("Project: " + project);

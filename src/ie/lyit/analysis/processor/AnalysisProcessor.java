@@ -88,6 +88,7 @@ public class AnalysisProcessor {
 		System.out.println("Done");
 	}
 
+	@SuppressWarnings("unused")
 	private void print() {
 
 		System.out.println("final size: " + projectDecoratorMap.size());

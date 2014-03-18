@@ -3,28 +3,16 @@ package ie.lyit.analysis.controller;
 import https.www_owasp_org.index_php.owasp_dependency_check.Analysis;
 import ie.lyit.analysis.presentation.AnalysisPresenter;
 import ie.lyit.analysis.strategy.AnalysisStrategy;
-import ie.lyit.domain.ProjectDTO;
-import ie.lyit.domain.ProjectDecorator;
 import ie.lyit.input.AnalysisParser;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public abstract class AbstractAnalysisController implements AnalysisController {
 
 	private AnalysisParser analysisParser = null;
 	protected AnalysisPresenter analysisPresenter = null;
 	protected List<AnalysisStrategy> analysisStrategyList = null;
-
-	// Trying this. It works, but it's a bit unwieldly...
-	private Map<String, ProjectDecorator> projectDecoratorMap = null;
-	private Map<String, ProjectDTO> projectMap = null;
-
-	public AbstractAnalysisController(){
-		projectDecoratorMap = new HashMap<String, ProjectDecorator>();
-	}
 
 	public void addStrategy(AnalysisStrategy analysisStrategy) {
 		if (analysisStrategyList == null) {

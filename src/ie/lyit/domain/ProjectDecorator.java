@@ -6,7 +6,6 @@ import java.util.List;
 //This might be a good way to allow for interactive analysis?
 public class ProjectDecorator {
 	private ProjectDTO project = null;
-	private ProjectType type = null;
 	private List<SingleAnalysisResult> sarList = null;
 
 	public List<SingleAnalysisResult> getSarList() {
