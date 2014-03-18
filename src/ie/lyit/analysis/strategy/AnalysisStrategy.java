@@ -1,11 +1,13 @@
 package ie.lyit.analysis.strategy;
 
+import https.www_owasp_org.index_php.owasp_dependency_check.Analysis;
+import ie.lyit.domain.AnalysisResult;
 
-public interface AnalysisStrategy<T, S> {
-	public T getAnalysisResult();
+import java.util.List;
 
-	public void performAnalysis(S analysisList);
 
-	// This needed to be changed to a list, since a single 'report' can contain
-	// multiple Analysis objects
+public interface AnalysisStrategy {
+	public AnalysisResult getAnalysisResult();
+
+	public void performAnalysis(List<Analysis> analysisList);
 }

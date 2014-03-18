@@ -41,9 +41,6 @@ public abstract class AbstractAnalysisController implements AnalysisController {
 			return;
 		}
 
-		//populateProjectMap();
-		//populateProjectDecoratorMap();
-
 		// Step 1: Parse all of the files in the directory provided
 		System.out.println("Parsing Files...");
 		runThroughStrategies(analysisParser.parse());

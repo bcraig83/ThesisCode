@@ -1,4 +1,4 @@
-package ie.lyit.analysis.strategy.analysisresult;
+package ie.lyit.analysis.strategy;
 
 import https.www_owasp_org.index_php.owasp_dependency_check.Analysis;
 import https.www_owasp_org.index_php.owasp_dependency_check.Analysis.Dependencies.Dependency;
@@ -8,14 +8,14 @@ import ie.lyit.domain.AnalysisResult;
 
 import java.util.List;
 
-public class VulnerabilitySeverityDistributionStrategy extends AbstractAnalysisResultStrategy {
+public class ContainsVulnerabilitiesStrategy extends AbstractAnalysisResultStrategy{
 
 	@Override
 	protected void initialise() {
 		AnalysisResult ar = getAnalysisResult();
+		ar.setNameOfAnalysis("Is Vulnerable");
+		ar.setTypeOfItemOfInterest("Project name");
 
-		ar.setNameOfAnalysis("Vulnerability severity distribution");
-		ar.setTypeOfItemOfInterest("Severity level");
 	}
 
 	@Override
@@ -24,16 +24,23 @@ public class VulnerabilitySeverityDistributionStrategy extends AbstractAnalysisR
 
 		List<Dependency> dependencyList = AnalysisUtil.extractDependencyList(analysis);
 
+		// int count = 0;
+		boolean isVulnerable = false;
+
 		for (Dependency dependency : dependencyList) {
+
 			List<Vulnerability> vulnerabilityList = AnalysisUtil.extractVulnerabilities(dependency);
 
 			if (vulnerabilityList == null) {
 				continue;
 			}
 
-			for (Vulnerability vulnerability : vulnerabilityList) {
-				ar.increment(vulnerability.getSeverity());
+			if (vulnerabilityList.size() > 0) {
+				isVulnerable = true;
+				break;
 			}
 		}
+
+		ar.add(analysis.getProjectInfo().getName(), String.valueOf(isVulnerable));
 	}
 }

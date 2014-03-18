@@ -2,7 +2,6 @@ package ie.lyit.analysis.strategy;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import ie.lyit.analysis.strategy.analysisresult.VulnerableJarDistributionStrategy;
 
 import org.junit.Before;
 

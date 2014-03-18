@@ -21,7 +21,7 @@ import org.junit.Test;
 public abstract class AbstractStrategyTest {
 
 	// Class under test
-	protected AnalysisStrategy<AnalysisResult, List<Analysis>> fixture = null;
+	protected AnalysisStrategy fixture = null;
 
 	protected AnalysisResult analysisResult = null;
 	protected Analysis analysis = null;
