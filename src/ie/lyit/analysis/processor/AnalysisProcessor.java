@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-// TODO: lots & lots of refactoring...but at least it's working :)
+// TODO: None of this ended up getting used, so can probably pull out alot of this code...
 public class AnalysisProcessor {
 	private AnalysisParser analysisParser = null;
 
@@ -26,7 +26,7 @@ public class AnalysisProcessor {
 		this.analysisParser = analysisParser;
 	}
 
-	public AnalysisProcessor(){
+	public AnalysisProcessor() {
 		projectDecoratorMap = new HashMap<String, ProjectDecorator>();
 	}
 
@@ -37,6 +37,7 @@ public class AnalysisProcessor {
 
 		analysisStrategyList.add(analysisStrategy);
 	}
+
 	private void populateProjectMap() {
 		ProjectSummaryParser projectSummaryParser = new ProjectSummaryParser();
 		projectSummaryParser.start();
@@ -45,8 +46,7 @@ public class AnalysisProcessor {
 		projectMap = projectSummaryParser.getProjectMap();
 	}
 
-
-	private void populateProjectDecoratorMap(){
+	private void populateProjectDecoratorMap() {
 		Iterator it = projectMap.entrySet().iterator();
 		while (it.hasNext()) {
 			Map.Entry pairs = (Map.Entry) it.next();
@@ -83,7 +83,9 @@ public class AnalysisProcessor {
 			}
 		}
 
-		print();
+		// print();
+
+		System.out.println("Done");
 	}
 
 	private void print() {
@@ -95,7 +97,7 @@ public class AnalysisProcessor {
 			Map.Entry pairs = (Map.Entry) it.next();
 			// System.out.println(pairs.getKey() + " = " + pairs.getValue());
 
-			ProjectDecorator pd = (ProjectDecorator)pairs.getValue();
+			ProjectDecorator pd = (ProjectDecorator) pairs.getValue();
 			List<SingleAnalysisResult> sarList = pd.getSarList();
 			for (SingleAnalysisResult sar : sarList) {
 				System.out.println(pairs.getKey() + " analysis name: " + sar.getNameOfAnalysis());
