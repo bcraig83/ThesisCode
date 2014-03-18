@@ -10,7 +10,6 @@ public class DependencyFactory implements Factory<Dependency> {
 
 	private Factory<Vulnerabilities> vulnerabilitiesFactory = new VulnerabitiesFactory();
 
-	@Override
 	public Dependency create() {
 
 		String jarName = rs.nextString(6) + ".jar";

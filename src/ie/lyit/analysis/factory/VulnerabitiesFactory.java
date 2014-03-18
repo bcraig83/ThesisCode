@@ -7,7 +7,6 @@ public class VulnerabitiesFactory implements Factory<Vulnerabilities> {
 
 	Factory<Vulnerability> vulnerabilityFactory = new VulnerabilityFactory();
 
-	@Override
 	public Vulnerabilities create() {
 		Vulnerabilities vulnerabilities = new Vulnerabilities();
 		vulnerabilities.getVulnerability().add(vulnerabilityFactory.create());

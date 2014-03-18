@@ -7,7 +7,6 @@ public class RandomNameProjectInfoFactory implements Factory<ProjectInfo> {
 
 	private RandomString rs = new RandomString();
 
-	@Override
 	public ProjectInfo create() {
 		ProjectInfo projectInfo = new ProjectInfo();
 		projectInfo.setName(rs.nextString(8));

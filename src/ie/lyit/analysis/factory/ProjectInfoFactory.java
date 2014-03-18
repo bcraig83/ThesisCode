@@ -4,7 +4,6 @@ import https.www_owasp_org.index_php.owasp_dependency_check.Analysis.ProjectInfo
 
 public class ProjectInfoFactory implements Factory<ProjectInfo> {
 
-	@Override
 	public ProjectInfo create() {
 		ProjectInfo projectInfo = new ProjectInfo();
 		projectInfo.setName("TestProject");

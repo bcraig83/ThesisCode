@@ -7,7 +7,6 @@ public class DependenciesFactory implements Factory<Dependencies> {
 
 	private Factory<Dependency> dependencyFactory = new DependencyFactory();
 
-	@Override
 	public Dependencies create() {
 		Dependencies dependencies = new Dependencies();
 

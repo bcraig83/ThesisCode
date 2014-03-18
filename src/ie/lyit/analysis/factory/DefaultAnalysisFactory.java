@@ -17,7 +17,6 @@ public class DefaultAnalysisFactory implements AnalysisFactory<Analysis> {
 
 	private List<Vulnerability> vulnerabilityList = new ArrayList<Vulnerability>();
 
-	@Override
 	public void addVulnerability(Vulnerability vulnerability) {
 		if (analysis == null) {
 			analysis = create();
@@ -26,7 +25,6 @@ public class DefaultAnalysisFactory implements AnalysisFactory<Analysis> {
 		vulnerabilityList.add(vulnerability);
 	}
 
-	@Override
 	public Analysis create() {
 		analysis = new Analysis();
 

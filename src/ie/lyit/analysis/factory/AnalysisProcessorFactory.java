@@ -15,7 +15,6 @@ public class AnalysisProcessorFactory implements Factory<AnalysisProcessor> {
 		this.path = path;
 	}
 
-	@Override
 	public AnalysisProcessor create() {
 		AnalysisProcessor analysisProcessor = new AnalysisProcessor();
 

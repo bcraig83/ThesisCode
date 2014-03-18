@@ -8,7 +8,6 @@ public abstract class AbstractSingleAnalysisResultStrategy implements AnalysisSt
 
 	protected SingleAnalysisResult sar = null;
 
-	@Override
 	public void performAnalysis(Analysis analysis) {
 
 		if (analysis == null) {

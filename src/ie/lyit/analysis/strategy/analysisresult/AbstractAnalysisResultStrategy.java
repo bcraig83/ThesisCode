@@ -10,7 +10,6 @@ public abstract class AbstractAnalysisResultStrategy implements AnalysisStrategy
 
 	private AnalysisResult analysisResult = null;
 
-	@Override
 	public AnalysisResult getAnalysisResult() {
 		if (analysisResult == null) {
 			analysisResult = new AnalysisResult();
@@ -30,7 +29,6 @@ public abstract class AbstractAnalysisResultStrategy implements AnalysisStrategy
 		return true;
 	}
 
-	@Override
 	public void performAnalysis(List<Analysis> analysisList) {
 		if (analysisList == null) {
 			return;

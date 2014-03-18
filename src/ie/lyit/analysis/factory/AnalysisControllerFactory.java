@@ -28,7 +28,6 @@ public class AnalysisControllerFactory implements Factory<AnalysisController> {
 		this.path = path;
 	}
 
-	@Override
 	public AnalysisController create() {
 		analysisController = new DefaultAnalysisController();
 

@@ -13,7 +13,6 @@ public class TotalNumberOfUniqueVulnerabilitiesStrategy extends AbstractSingleAn
 		sar.setResult(result);
 	}
 
-	@Override
 	public SingleAnalysisResult getAnalysisResult() {
 		if (sar == null) {
 			sar = new SingleAnalysisResult("Total number of unique vulnerabilities");

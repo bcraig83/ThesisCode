@@ -9,7 +9,6 @@ public class MultipleDependenciesFactory implements Factory<Dependencies> {
 
 	private Factory<Dependency> dependencyFactory = new DependencyFactory();
 
-	@Override
 	public Dependencies create() {
 
 		Dependencies result = dependenciesFactory.create();

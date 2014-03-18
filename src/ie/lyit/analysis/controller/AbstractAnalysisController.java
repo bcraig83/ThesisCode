@@ -26,7 +26,6 @@ public abstract class AbstractAnalysisController implements AnalysisController {
 		projectDecoratorMap = new HashMap<String, ProjectDecorator>();
 	}
 
-	@Override
 	public void addStrategy(AnalysisStrategy analysisStrategy) {
 		if (analysisStrategyList == null) {
 			analysisStrategyList = new ArrayList<AnalysisStrategy>();
@@ -48,7 +47,6 @@ public abstract class AbstractAnalysisController implements AnalysisController {
 	/* (non-Javadoc)
 	 * @see ie.lyit.analysis.AnalysisController#performAnalysis()
 	 */
-	@Override
 	public void performAnalysis() {
 		if (!membersAreValid()) {
 			System.out.println("Trying to perform analysis without setting required members...");
@@ -66,12 +64,10 @@ public abstract class AbstractAnalysisController implements AnalysisController {
 	}
 
 	// May re-write how these components are all wired up
-	@Override
 	public void setAnalysisParser(AnalysisParser analysisParser) {
 		this.analysisParser = analysisParser;
 	}
 
-	@Override
 	public void setAnalysisPresenter(AnalysisPresenter analysisPresenter) {
 		this.analysisPresenter = analysisPresenter;
 	}
