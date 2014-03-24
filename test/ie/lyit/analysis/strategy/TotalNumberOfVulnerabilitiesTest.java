@@ -1,7 +1,6 @@
 package ie.lyit.analysis.strategy;
 
 import static org.junit.Assert.assertNotNull;
-import ie.lyit.analysis.strategy.analysisresult.TotalNumberOfVulnerabilitiesStrategy;
 
 import org.junit.Before;
 

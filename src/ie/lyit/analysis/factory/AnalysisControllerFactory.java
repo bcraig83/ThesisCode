@@ -4,15 +4,16 @@ import ie.lyit.analysis.controller.AnalysisController;
 import ie.lyit.analysis.controller.DefaultAnalysisController;
 import ie.lyit.analysis.presentation.AnalysisPresenter;
 import ie.lyit.analysis.presentation.file.CsvFileAnalysisPresenter;
-import ie.lyit.analysis.strategy.analysisresult.ContainsVulnerabilitiesStrategy;
-import ie.lyit.analysis.strategy.analysisresult.TotalNumberOfLibrariesStrategy;
-import ie.lyit.analysis.strategy.analysisresult.TotalNumberOfUniqueVulnerabilitiesStrategy;
-import ie.lyit.analysis.strategy.analysisresult.TotalNumberOfVulnerabilitiesStrategy;
-import ie.lyit.analysis.strategy.analysisresult.TotalNumberOfVulnerableLibrariesAnalysisStrategy;
-import ie.lyit.analysis.strategy.analysisresult.VulnerabilityIdentifierAndTypeAnalysisStrategy;
-import ie.lyit.analysis.strategy.analysisresult.VulnerabilityPerLibraryAnalysisStrategy;
-import ie.lyit.analysis.strategy.analysisresult.VulnerabilitySeverityDistributionStrategy;
-import ie.lyit.analysis.strategy.analysisresult.VulnerabilityTypeDistributionAnalysisStrategy;
+import ie.lyit.analysis.strategy.ContainsVulnerabilitiesStrategy;
+import ie.lyit.analysis.strategy.TotalNumberOfLibrariesStrategy;
+import ie.lyit.analysis.strategy.TotalNumberOfUniqueVulnerabilitiesStrategy;
+import ie.lyit.analysis.strategy.TotalNumberOfVulnerabilitiesStrategy;
+import ie.lyit.analysis.strategy.TotalNumberOfVulnerableLibrariesAnalysisStrategy;
+import ie.lyit.analysis.strategy.VulnerabilityIdDistributionStrategy;
+import ie.lyit.analysis.strategy.VulnerabilityIdentifierAndTypeAnalysisStrategy;
+import ie.lyit.analysis.strategy.VulnerabilityPerLibraryAnalysisStrategy;
+import ie.lyit.analysis.strategy.VulnerabilitySeverityDistributionStrategy;
+import ie.lyit.analysis.strategy.VulnerabilityTypeDistributionAnalysisStrategy;
 import ie.lyit.input.AnalysisParser;
 import ie.lyit.input.xml.DirectoryAnalysisParser;
 
@@ -28,7 +29,6 @@ public class AnalysisControllerFactory implements Factory<AnalysisController> {
 		this.path = path;
 	}
 
-	@Override
 	public AnalysisController create() {
 		analysisController = new DefaultAnalysisController();
 
@@ -40,6 +40,7 @@ public class AnalysisControllerFactory implements Factory<AnalysisController> {
 		analysisController.setAnalysisPresenter(analysisPresenter);
 
 		// Add whatever strategies we want to run...
+		analysisController.addStrategy(new VulnerabilityIdDistributionStrategy());
 		analysisController.addStrategy(new VulnerabilityIdentifierAndTypeAnalysisStrategy());
 		analysisController.addStrategy(new VulnerabilityTypeDistributionAnalysisStrategy());
 		analysisController.addStrategy(new VulnerabilitySeverityDistributionStrategy());

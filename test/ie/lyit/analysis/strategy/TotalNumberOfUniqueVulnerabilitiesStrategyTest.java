@@ -3,7 +3,6 @@ package ie.lyit.analysis.strategy;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import https.www_owasp_org.index_php.owasp_dependency_check.Analysis.Dependencies.Dependency.Vulnerabilities.Vulnerability;
-import ie.lyit.analysis.strategy.analysisresult.TotalNumberOfUniqueVulnerabilitiesStrategy;
 
 import org.junit.Before;
 import org.junit.Test;

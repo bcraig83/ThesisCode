@@ -3,14 +3,10 @@ package ie.lyit.analysis.controller;
 import https.www_owasp_org.index_php.owasp_dependency_check.Analysis;
 import ie.lyit.analysis.presentation.AnalysisPresenter;
 import ie.lyit.analysis.strategy.AnalysisStrategy;
-import ie.lyit.domain.ProjectDTO;
-import ie.lyit.domain.ProjectDecorator;
 import ie.lyit.input.AnalysisParser;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public abstract class AbstractAnalysisController implements AnalysisController {
 
@@ -18,15 +14,6 @@ public abstract class AbstractAnalysisController implements AnalysisController {
 	protected AnalysisPresenter analysisPresenter = null;
 	protected List<AnalysisStrategy> analysisStrategyList = null;
 
-	// Trying this. It works, but it's a bit unwieldly...
-	private Map<String, ProjectDecorator> projectDecoratorMap = null;
-	private Map<String, ProjectDTO> projectMap = null;
-
-	public AbstractAnalysisController(){
-		projectDecoratorMap = new HashMap<String, ProjectDecorator>();
-	}
-
-	@Override
 	public void addStrategy(AnalysisStrategy analysisStrategy) {
 		if (analysisStrategyList == null) {
 			analysisStrategyList = new ArrayList<AnalysisStrategy>();
@@ -48,15 +35,11 @@ public abstract class AbstractAnalysisController implements AnalysisController {
 	/* (non-Javadoc)
 	 * @see ie.lyit.analysis.AnalysisController#performAnalysis()
 	 */
-	@Override
 	public void performAnalysis() {
 		if (!membersAreValid()) {
 			System.out.println("Trying to perform analysis without setting required members...");
 			return;
 		}
-
-		//populateProjectMap();
-		//populateProjectDecoratorMap();
 
 		// Step 1: Parse all of the files in the directory provided
 		System.out.println("Parsing Files...");
@@ -66,12 +49,10 @@ public abstract class AbstractAnalysisController implements AnalysisController {
 	}
 
 	// May re-write how these components are all wired up
-	@Override
 	public void setAnalysisParser(AnalysisParser analysisParser) {
 		this.analysisParser = analysisParser;
 	}
 
-	@Override
 	public void setAnalysisPresenter(AnalysisPresenter analysisPresenter) {
 		this.analysisPresenter = analysisPresenter;
 	}

@@ -17,7 +17,6 @@ public class AnalysisListFactory implements AnalysisFactory<List<Analysis>> {
 		}
 	}
 
-	@Override
 	public void addVulnerability(Vulnerability vulnerability) {
 		if (vulnerability == null) {
 			return;
@@ -26,7 +25,6 @@ public class AnalysisListFactory implements AnalysisFactory<List<Analysis>> {
 		returnList.get(0).getDependencies().getDependency().get(0).getVulnerabilities().getVulnerability().add(vulnerability);
 	}
 
-	@Override
 	public List<Analysis> create() {
 		createReturnList();
 

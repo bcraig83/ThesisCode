@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import ie.lyit.analysis.builder.AnalysisListBuilder;
 import ie.lyit.analysis.factory.MultipleDependenciesFactory;
-import ie.lyit.analysis.strategy.analysisresult.TotalNumberOfLibrariesStrategy;
 
 import java.util.Map;
 

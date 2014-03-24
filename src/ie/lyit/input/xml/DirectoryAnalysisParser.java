@@ -33,7 +33,6 @@ public class DirectoryAnalysisParser implements AnalysisParser {
 		this.directoryPath = directoryPath;
 	}
 
-	@Override
 	public List<Analysis> parse() {
 
 		final File folder = new File(directoryPath);

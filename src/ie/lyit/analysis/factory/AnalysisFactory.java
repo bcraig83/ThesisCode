@@ -5,5 +5,4 @@ import https.www_owasp_org.index_php.owasp_dependency_check.Analysis.Dependencie
 public interface AnalysisFactory<T> extends Factory<T> {
 
 	public void addVulnerability(Vulnerability vulnerability);
-
 }

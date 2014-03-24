@@ -20,7 +20,6 @@ public class AnalysisPresenterSpy implements AnalysisPresenter {
 		return typeOfItemOfInterestMap;
 	}
 
-	@Override
 	public void presentAnalysis(AnalysisResult analysisResult) {
 		String nameOfAnalysis = analysisResult.getNameOfAnalysis();
 

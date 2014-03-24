@@ -14,7 +14,7 @@ public class DefaultAnalysisController extends AbstractAnalysisController {
 		// Step 2: For each AnalysisStrategy, apply it to the list of all
 		// Analysis objects
 		System.out.println("Analysing...");
-		for (AnalysisStrategy<AnalysisResult, List<Analysis>> as : analysisStrategyList) {
+		for (AnalysisStrategy as : analysisStrategyList) {
 
 			as.performAnalysis(analysisList);
 			AnalysisResult ar = as.getAnalysisResult();
@@ -23,18 +23,6 @@ public class DefaultAnalysisController extends AbstractAnalysisController {
 
 			// Step 3: For each analysisResult, apply the presentation logic
 			analysisPresenter.presentAnalysis(ar);
-
-			// TODO: this is very crude, don't really like it!
-			// Iterator it1 = projectDecoratorMap.entrySet().iterator();
-			// while (it1.hasNext()) {
-			// Map.Entry pairs = (Map.Entry) it1.next();
-			// ProjectDecorator projectDecorator = (ProjectDecorator)
-			// pairs.getValue();
-			// //projectDecorator.put(ar.getNameOfAnalysis(), ar);
-			//
-			// projectDecorator.put(ar.getNameOfAnalysis(),
-			// converter.convert(ar, projectDecorator.getName()));
-			// }
 		}
 	}
 }
