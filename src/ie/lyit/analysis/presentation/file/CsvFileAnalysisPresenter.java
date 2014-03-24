@@ -12,8 +12,18 @@ import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 
+/**
+ * The Class CsvFileAnalysisPresenter.
+ */
 public class CsvFileAnalysisPresenter implements AnalysisPresenter {
 
+	/**
+	 * Creates the file.
+	 * 
+	 * @param analysisResult
+	 *            the analysis result
+	 * @return the file a file which contains the results
+	 */
 	protected File createFile(AnalysisResult analysisResult) {
 		String directoryName = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 
@@ -32,6 +42,9 @@ public class CsvFileAnalysisPresenter implements AnalysisPresenter {
 		return new File(fileName.toString());
 	}
 
+	/* (non-Javadoc)
+	 * @see ie.lyit.analysis.presentation.AnalysisPresenter#presentAnalysis(ie.lyit.domain.AnalysisResult)
+	 */
 	@Override
 	public void presentAnalysis(AnalysisResult analysisResult) {
 		// TODO: this is mostly file-specific NOT csvFile-specific so should be
@@ -48,6 +61,12 @@ public class CsvFileAnalysisPresenter implements AnalysisPresenter {
 
 	}
 
+	/**
+	 * Write data.
+	 *
+	 * @param file the file
+	 * @param analysisResult the analysis result
+	 */
 	protected void writeData(File file, AnalysisResult analysisResult) {
 		try {
 
@@ -79,6 +98,12 @@ public class CsvFileAnalysisPresenter implements AnalysisPresenter {
 		}
 	}
 
+	/**
+	 * Write headings.
+	 *
+	 * @param file the file
+	 * @param analysisResult the analysis result
+	 */
 	protected void writeHeadings(File file, AnalysisResult analysisResult) {
 		if (!file.exists()) {
 			try {

@@ -2,7 +2,12 @@ package ie.lyit.analysis.utility;
 
 import java.util.Random;
 
+/**
+ * The Class RandomString.
+ */
 public class RandomString {
+
+	/** The Constant symbols. */
 	private static final char[] symbols = new char[36];
 
 	static {
@@ -14,17 +19,20 @@ public class RandomString {
 		}
 	}
 
-	public static void main(String[] args) {
-		RandomString rs = new RandomString();
-		System.out.println(rs.nextString(6));
-	}
+	/** The buf. */
+	private static char[] buf;
 
-	private char[] buf;
+	/** The Constant random. */
+	private final static Random random = new Random();
 
-	private final Random random = new Random();
-
-	// TODO: may as well make this a static method?
-	public String nextString(int length) {
+	/**
+	 * Given the length as a parameter, return a random string of that length.
+	 * 
+	 * @param length
+	 *            the length
+	 * @return the string
+	 */
+	public static String nextString(int length) {
 		if (length < 1) {
 			throw new IllegalArgumentException("length < 1: " + length);
 		}

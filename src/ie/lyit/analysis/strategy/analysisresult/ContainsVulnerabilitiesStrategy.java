@@ -8,8 +8,20 @@ import ie.lyit.domain.AnalysisResult;
 
 import java.util.List;
 
-public class ContainsVulnerabilitiesStrategy extends AbstractAnalysisResultStrategy{
+/**
+ * The Class ContainsVulnerabilitiesStrategy. This will identify if the analysis
+ * object has any vulnerabilities, and will return either true or false. Just a
+ * quick indication of what projects are at risk, and which ones are not.
+ */
+public class ContainsVulnerabilitiesStrategy extends AbstractAnalysisResultStrategy {
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ie.lyit.analysis.strategy.analysisresult.AbstractAnalysisResultStrategy
+	 * #initialise()
+	 */
 	@Override
 	protected void initialise() {
 		AnalysisResult ar = getAnalysisResult();
@@ -18,6 +30,14 @@ public class ContainsVulnerabilitiesStrategy extends AbstractAnalysisResultStrat
 
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ie.lyit.analysis.strategy.analysisresult.AbstractAnalysisResultStrategy
+	 * #runSpecificAnalysis
+	 * (https.www_owasp_org.index_php.owasp_dependency_check.Analysis)
+	 */
 	@Override
 	protected void runSpecificAnalysis(Analysis analysis) {
 		AnalysisResult ar = getAnalysisResult();

@@ -16,24 +16,38 @@ import ie.lyit.analysis.strategy.analysisresult.VulnerabilityTypeDistributionAna
 import ie.lyit.input.AnalysisParser;
 import ie.lyit.input.xml.DirectoryAnalysisParser;
 
+// TODO: Auto-generated Javadoc
+/**
+ * A factory for creating AnalysisController objects.
+ */
 public class AnalysisControllerFactory implements Factory<AnalysisController> {
 
-	// Could all be wired using Spring...
+	// Could all be wired using Spring, of course...
 	private AnalysisController analysisController = null;
 	private AnalysisPresenter analysisPresenter = null;
 	private AnalysisParser parser = null;
 	private String path = null;
 
+	/**
+	 * Instantiates a new analysis controller factory.
+	 * 
+	 * @param path
+	 *            The path that contains the XML files
+	 */
 	public AnalysisControllerFactory(String path) {
 		this.path = path;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see ie.lyit.analysis.factory.Factory#create()
+	 */
 	@Override
 	public AnalysisController create() {
 		analysisController = new DefaultAnalysisController();
 
 		parser = new DirectoryAnalysisParser(path);
-		// analysisPresenter = new CsvFileAnalysisAppendingPresenter();
 		analysisPresenter = new CsvFileAnalysisPresenter();
 
 		analysisController.setAnalysisParser(parser);
