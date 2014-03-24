@@ -11,8 +11,8 @@ public class Main {
 	// XML files
 	// TODO: add usage instructions, validation on arguments, etc.
 	public static void main(String[] args) {
-		Main controller = new Main();
-		controller.execute(args[0]);
+		Main main = new Main();
+		main.execute(args[0]);
 	}
 
 	public void execute(String path) {

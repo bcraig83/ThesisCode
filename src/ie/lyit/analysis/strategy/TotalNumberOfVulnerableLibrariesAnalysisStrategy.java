@@ -8,7 +8,7 @@ import ie.lyit.domain.AnalysisResult;
 
 import java.util.List;
 
-public class TotalNumberOfVulnerableLibrariesAnalysisStrategy extends AbstractAnalysisResultStrategy{
+public class TotalNumberOfVulnerableLibrariesAnalysisStrategy extends AbstractAnalysisStrategy{
 
 	@Override
 	protected void initialise() {

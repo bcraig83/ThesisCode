@@ -8,7 +8,7 @@ import ie.lyit.domain.AnalysisResult;
 
 import java.util.List;
 
-public class ContainsVulnerabilitiesStrategy extends AbstractAnalysisResultStrategy{
+public class ContainsVulnerabilitiesStrategy extends AbstractAnalysisStrategy{
 
 	@Override
 	protected void initialise() {

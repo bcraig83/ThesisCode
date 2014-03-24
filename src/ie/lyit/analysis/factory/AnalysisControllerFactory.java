@@ -9,6 +9,7 @@ import ie.lyit.analysis.strategy.TotalNumberOfLibrariesStrategy;
 import ie.lyit.analysis.strategy.TotalNumberOfUniqueVulnerabilitiesStrategy;
 import ie.lyit.analysis.strategy.TotalNumberOfVulnerabilitiesStrategy;
 import ie.lyit.analysis.strategy.TotalNumberOfVulnerableLibrariesAnalysisStrategy;
+import ie.lyit.analysis.strategy.VulnerabilityIdDistributionStrategy;
 import ie.lyit.analysis.strategy.VulnerabilityIdentifierAndTypeAnalysisStrategy;
 import ie.lyit.analysis.strategy.VulnerabilityPerLibraryAnalysisStrategy;
 import ie.lyit.analysis.strategy.VulnerabilitySeverityDistributionStrategy;
@@ -39,6 +40,7 @@ public class AnalysisControllerFactory implements Factory<AnalysisController> {
 		analysisController.setAnalysisPresenter(analysisPresenter);
 
 		// Add whatever strategies we want to run...
+		analysisController.addStrategy(new VulnerabilityIdDistributionStrategy());
 		analysisController.addStrategy(new VulnerabilityIdentifierAndTypeAnalysisStrategy());
 		analysisController.addStrategy(new VulnerabilityTypeDistributionAnalysisStrategy());
 		analysisController.addStrategy(new VulnerabilitySeverityDistributionStrategy());

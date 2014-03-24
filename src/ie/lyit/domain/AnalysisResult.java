@@ -25,6 +25,8 @@ public class AnalysisResult {
 		stringMap = new HashMap<String, String>();
 	}
 
+
+
 	public void add(String t, Double i) {
 		// System.out.println("Before: " + resultMap.get(t));
 

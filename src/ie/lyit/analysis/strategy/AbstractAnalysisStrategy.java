@@ -5,7 +5,7 @@ import ie.lyit.domain.AnalysisResult;
 
 import java.util.List;
 
-public abstract class AbstractAnalysisResultStrategy implements AnalysisStrategy {
+public abstract class AbstractAnalysisStrategy implements AnalysisStrategy {
 
 	private AnalysisResult analysisResult = null;
 
