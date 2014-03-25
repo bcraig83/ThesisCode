@@ -8,15 +8,24 @@ import https.www_owasp_org.index_php.owasp_dependency_check.Analysis.ProjectInfo
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A factory for creating DefaultAnalysis objects.
+ */
 public class DefaultAnalysisFactory implements AnalysisFactory<Analysis> {
 
 	private Analysis analysis = null;
 	private Factory<Dependencies> dependenciesFactory = new DependenciesFactory();
-
 	private Factory<ProjectInfo> projectInfoFactory = new ProjectInfoFactory();
-
 	private List<Vulnerability> vulnerabilityList = new ArrayList<Vulnerability>();
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ie.lyit.analysis.factory.AnalysisFactory#addVulnerability(https.www_owasp_org
+	 * .index_php.owasp_dependency_check.Analysis.Dependencies.Dependency.
+	 * Vulnerabilities.Vulnerability)
+	 */
 	@Override
 	public void addVulnerability(Vulnerability vulnerability) {
 		if (analysis == null) {
@@ -26,6 +35,11 @@ public class DefaultAnalysisFactory implements AnalysisFactory<Analysis> {
 		vulnerabilityList.add(vulnerability);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see ie.lyit.analysis.factory.Factory#create()
+	 */
 	@Override
 	public Analysis create() {
 		analysis = new Analysis();

@@ -3,29 +3,40 @@ package ie.lyit.analysis.controller;
 import https.www_owasp_org.index_php.owasp_dependency_check.Analysis;
 import ie.lyit.analysis.presentation.AnalysisPresenter;
 import ie.lyit.analysis.strategy.AnalysisStrategy;
-import ie.lyit.domain.ProjectDTO;
-import ie.lyit.domain.ProjectDecorator;
 import ie.lyit.input.AnalysisParser;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+/**
+ * The Class AbstractAnalysisController. This abstract version allows us to keep
+ * the 'common' code in a single place; namely the setters and the
+ * performAnalysis() method.
+ */
 public abstract class AbstractAnalysisController implements AnalysisController {
 
+	/** The analysis parser. */
 	private AnalysisParser analysisParser = null;
+
+	/** The analysis presenter. */
 	protected AnalysisPresenter analysisPresenter = null;
+
+	/** The analysis strategy list. */
 	protected List<AnalysisStrategy> analysisStrategyList = null;
 
-	// Trying this. It works, but it's a bit unwieldly...
-	private Map<String, ProjectDecorator> projectDecoratorMap = null;
-	private Map<String, ProjectDTO> projectMap = null;
-
-	public AbstractAnalysisController(){
-		projectDecoratorMap = new HashMap<String, ProjectDecorator>();
+	/**
+	 * Instantiates a new abstract analysis controller.
+	 */
+	public AbstractAnalysisController() {
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ie.lyit.analysis.controller.AnalysisController#addStrategy(ie.lyit.analysis
+	 * .strategy.AnalysisStrategy)
+	 */
 	@Override
 	public void addStrategy(AnalysisStrategy analysisStrategy) {
 		if (analysisStrategyList == null) {
@@ -35,17 +46,22 @@ public abstract class AbstractAnalysisController implements AnalysisController {
 		analysisStrategyList.add(analysisStrategy);
 	}
 
-	private boolean membersAreValid(){
-		if (analysisParser == null
-				|| analysisStrategyList == null
-				|| analysisPresenter == null) {
+	/**
+	 * Members are valid.
+	 * 
+	 * @return true, if successful
+	 */
+	private boolean membersAreValid() {
+		if (analysisParser == null || analysisStrategyList == null || analysisPresenter == null) {
 			return false;
 		}
 
 		return true;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see ie.lyit.analysis.AnalysisController#performAnalysis()
 	 */
 	@Override
@@ -55,9 +71,6 @@ public abstract class AbstractAnalysisController implements AnalysisController {
 			return;
 		}
 
-		//populateProjectMap();
-		//populateProjectDecoratorMap();
-
 		// Step 1: Parse all of the files in the directory provided
 		System.out.println("Parsing Files...");
 		runThroughStrategies(analysisParser.parse());
@@ -66,15 +79,38 @@ public abstract class AbstractAnalysisController implements AnalysisController {
 	}
 
 	// May re-write how these components are all wired up
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ie.lyit.analysis.controller.AnalysisController#setAnalysisParser(ie.lyit
+	 * .input.AnalysisParser)
+	 */
 	@Override
 	public void setAnalysisParser(AnalysisParser analysisParser) {
 		this.analysisParser = analysisParser;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ie.lyit.analysis.controller.AnalysisController#setAnalysisPresenter(ie
+	 * .lyit.analysis.presentation.AnalysisPresenter)
+	 */
 	@Override
 	public void setAnalysisPresenter(AnalysisPresenter analysisPresenter) {
 		this.analysisPresenter = analysisPresenter;
 	}
 
+	/**
+	 * Run through all of the strategies that have been defined. This is left to
+	 * be implemented by the concrete class, since how the strategies are
+	 * actually applied may be different depending on what the user is trying to
+	 * achieve.
+	 * 
+	 * @param analysisList
+	 *            the analysis list that requires examination.
+	 */
 	protected abstract void runThroughStrategies(List<Analysis> analysisList);
 }

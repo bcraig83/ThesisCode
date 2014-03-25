@@ -8,8 +8,14 @@ import ie.lyit.domain.AnalysisResult;
 
 import java.util.List;
 
+/**
+ * The Class VulnerableJarDistributionStrategy.
+ */
 public class VulnerableJarDistributionStrategy extends AbstractAnalysisResultStrategy {
 
+	/* (non-Javadoc)
+	 * @see ie.lyit.analysis.strategy.analysisresult.AbstractAnalysisResultStrategy#initialise()
+	 */
 	@Override
 	protected void initialise() {
 		AnalysisResult ar = getAnalysisResult();
@@ -19,6 +25,9 @@ public class VulnerableJarDistributionStrategy extends AbstractAnalysisResultStr
 
 	}
 
+	/* (non-Javadoc)
+	 * @see ie.lyit.analysis.strategy.analysisresult.AbstractAnalysisResultStrategy#runSpecificAnalysis(https.www_owasp_org.index_php.owasp_dependency_check.Analysis)
+	 */
 	@Override
 	protected void runSpecificAnalysis(Analysis analysis) {
 		AnalysisResult ar = getAnalysisResult();

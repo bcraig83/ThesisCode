@@ -19,7 +19,7 @@ public class AnalysisUtil {
 
 	/**
 	 * Given an analysis object, extract all dependencies from it and return it
-	 * in an ArrayList object
+	 * in an ArrayList object.
 	 * 
 	 * @param analysis
 	 *            The analysis object that contains the dependencies
@@ -49,10 +49,9 @@ public class AnalysisUtil {
 
 	/**
 	 * Given an analysis object, extract all unique vulnerabilities from it and
-	 * return it in an Map object
-	 * 
-	 * @param analysis
-	 *            The analysis object that contains the vulnerabilities
+	 * return it in an Map object.
+	 *
+	 * @param analysis            The analysis object that contains the vulnerabilities
 	 * @return A map of all unique vulnerabilities, with the vulnerability name
 	 *         set as the key
 	 */

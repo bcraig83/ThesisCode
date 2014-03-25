@@ -6,8 +6,6 @@ import java.util.List;
 
 public class ProjectFocusedAnalysisController extends AbstractAnalysisController {
 
-
-
 	@Override
 	protected void runThroughStrategies(List<Analysis> analysisList) {
 		// TODO

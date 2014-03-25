@@ -8,8 +8,22 @@ import ie.lyit.domain.AnalysisResult;
 
 import java.util.List;
 
-public class TotalNumberOfVulnerableLibrariesAnalysisStrategy extends AbstractAnalysisResultStrategy{
+/**
+ * The Class TotalNumberOfVulnerableLibrariesAnalysisStrategy. In contrast to
+ * the TotalNumberOfVunlerabilitiesStrategy, this strategy simply counts how
+ * many libraries contain any vulnerabilities. This does not give an indication
+ * as to how many vulnerabilities are in each library, merely how many
+ * vulnerable libraries are used by a single project.
+ */
+public class TotalNumberOfVulnerableLibrariesAnalysisStrategy extends AbstractAnalysisResultStrategy {
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ie.lyit.analysis.strategy.analysisresult.AbstractAnalysisResultStrategy
+	 * #initialise()
+	 */
 	@Override
 	protected void initialise() {
 		AnalysisResult ar = getAnalysisResult();
@@ -17,6 +31,14 @@ public class TotalNumberOfVulnerableLibrariesAnalysisStrategy extends AbstractAn
 		ar.setTypeOfItemOfInterest("Project name");
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ie.lyit.analysis.strategy.analysisresult.AbstractAnalysisResultStrategy
+	 * #runSpecificAnalysis
+	 * (https.www_owasp_org.index_php.owasp_dependency_check.Analysis)
+	 */
 	@Override
 	protected void runSpecificAnalysis(Analysis analysis) {
 		AnalysisResult ar = getAnalysisResult();

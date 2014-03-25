@@ -7,8 +7,14 @@ import ie.lyit.domain.AnalysisResult;
 import java.util.List;
 
 
+/**
+ * Provide a default implementation of the AnalysisController interface
+ */
 public class DefaultAnalysisController extends AbstractAnalysisController {
 
+	/* (non-Javadoc)
+	 * @see ie.lyit.analysis.controller.AbstractAnalysisController#runThroughStrategies(java.util.List)
+	 */
 	@Override
 	protected void runThroughStrategies(List<Analysis> analysisList) {
 		// Step 2: For each AnalysisStrategy, apply it to the list of all
@@ -23,18 +29,6 @@ public class DefaultAnalysisController extends AbstractAnalysisController {
 
 			// Step 3: For each analysisResult, apply the presentation logic
 			analysisPresenter.presentAnalysis(ar);
-
-			// TODO: this is very crude, don't really like it!
-			// Iterator it1 = projectDecoratorMap.entrySet().iterator();
-			// while (it1.hasNext()) {
-			// Map.Entry pairs = (Map.Entry) it1.next();
-			// ProjectDecorator projectDecorator = (ProjectDecorator)
-			// pairs.getValue();
-			// //projectDecorator.put(ar.getNameOfAnalysis(), ar);
-			//
-			// projectDecorator.put(ar.getNameOfAnalysis(),
-			// converter.convert(ar, projectDecorator.getName()));
-			// }
 		}
 	}
 }
