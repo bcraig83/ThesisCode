@@ -8,12 +8,27 @@ import ie.lyit.input.AnalysisParser;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Class AbstractAnalysisController. This abstract version allows us to keep
+ * the 'common' code in a single place; namely the setters and the
+ * performAnalysis() method.
+ */
 public abstract class AbstractAnalysisController implements AnalysisController {
 
 	private AnalysisParser analysisParser = null;
+
 	protected AnalysisPresenter analysisPresenter = null;
+
 	protected List<AnalysisStrategy> analysisStrategyList = null;
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ie.lyit.analysis.controller.AnalysisController#addStrategy(ie.lyit.analysis
+	 * .strategy.AnalysisStrategy)
+	 */
+	@Override
 	public void addStrategy(AnalysisStrategy analysisStrategy) {
 		if (analysisStrategyList == null) {
 			analysisStrategyList = new ArrayList<AnalysisStrategy>();
@@ -22,7 +37,12 @@ public abstract class AbstractAnalysisController implements AnalysisController {
 		analysisStrategyList.add(analysisStrategy);
 	}
 
-	private boolean membersAreValid(){
+	/**
+	 * Members are valid.
+	 * 
+	 * @return true, if successful
+	 */
+	private boolean membersAreValid() {
 		if (analysisParser == null
 				|| analysisStrategyList == null
 				|| analysisPresenter == null) {
@@ -32,7 +52,9 @@ public abstract class AbstractAnalysisController implements AnalysisController {
 		return true;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see ie.lyit.analysis.AnalysisController#performAnalysis()
 	 */
 	public void performAnalysis() {
@@ -48,14 +70,39 @@ public abstract class AbstractAnalysisController implements AnalysisController {
 		System.out.println("Done");
 	}
 
-	// May re-write how these components are all wired up
+	// May re-write how these components are all wired up<<<<<<< HEAD
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ie.lyit.analysis.controller.AnalysisController#setAnalysisParser(ie.lyit
+	 * .input.AnalysisParser)
+	 */
+	@Override
 	public void setAnalysisParser(AnalysisParser analysisParser) {
 		this.analysisParser = analysisParser;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ie.lyit.analysis.controller.AnalysisController#setAnalysisPresenter(ie
+	 * .lyit.analysis.presentation.AnalysisPresenter)
+	 */
+	@Override
 	public void setAnalysisPresenter(AnalysisPresenter analysisPresenter) {
 		this.analysisPresenter = analysisPresenter;
 	}
 
+	/**
+	 * Run through all of the strategies that have been defined. This is left to
+	 * be implemented by the concrete class, since how the strategies are
+	 * actually applied may be different depending on what the user is trying to
+	 * achieve.
+	 * 
+	 * @param analysisList
+	 *            the analysis list that requires examination.
+	 */
 	protected abstract void runThroughStrategies(List<Analysis> analysisList);
 }

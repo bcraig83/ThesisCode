@@ -9,6 +9,12 @@ public abstract class AbstractAnalysisStrategy implements AnalysisStrategy {
 
 	private AnalysisResult analysisResult = null;
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see ie.lyit.analysis.strategy.AnalysisStrategy#getAnalysisResult()
+	 */
+	@Override
 	public AnalysisResult getAnalysisResult() {
 		if (analysisResult == null) {
 			analysisResult = new AnalysisResult();
@@ -17,9 +23,20 @@ public abstract class AbstractAnalysisStrategy implements AnalysisStrategy {
 		return analysisResult;
 	}
 
+	/**
+	 * Initialise the object. This is intended to allow implementors to set the
+	 * name of the analysis
+	 */
 	protected abstract void initialise();
 
-	// This might be better suited in some Validation or Utility class
+	/**
+	 * Checks if is analysis object valid. This might be better suited in some
+	 * Validation or Utility class
+	 * 
+	 * @param analysis
+	 *            the analysis
+	 * @return true, if is analysis object valid
+	 */
 	protected boolean isAnalysisObjectValid(Analysis analysis) {
 		if (analysis == null) {
 			return false;
@@ -28,6 +45,13 @@ public abstract class AbstractAnalysisStrategy implements AnalysisStrategy {
 		return true;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ie.lyit.analysis.strategy.AnalysisStrategy#performAnalysis(java.lang.
+	 * Object)
+	 */
 	public void performAnalysis(List<Analysis> analysisList) {
 		if (analysisList == null) {
 			return;
@@ -44,5 +68,12 @@ public abstract class AbstractAnalysisStrategy implements AnalysisStrategy {
 		}
 	}
 
+	/**
+	 * Run specific analysis. This is abstract, forcing implementors to
+	 * implement their own specific analysis.
+	 * 
+	 * @param analysis
+	 *            the analysis
+	 */
 	protected abstract void runSpecificAnalysis(Analysis analysis);
 }

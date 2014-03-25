@@ -4,11 +4,16 @@ import ie.lyit.domain.AnalysisResult;
 
 import java.io.File;
 
+/**
+ * The Class CsvFileAnalysisAppendingPresenter.
+ */
 public class CsvFileAnalysisAppendingPresenter extends CsvFileAnalysisPresenter {
 
+	/* (non-Javadoc)
+	 * @see ie.lyit.analysis.presentation.file.CsvFileAnalysisPresenter#createFile(ie.lyit.domain.AnalysisResult)
+	 */
 	@Override
 	protected File createFile(AnalysisResult analysisResult) {
-
 		StringBuffer fileName = new StringBuffer();
 		fileName.append("reports");
 		fileName.append("\\");
@@ -18,9 +23,11 @@ public class CsvFileAnalysisAppendingPresenter extends CsvFileAnalysisPresenter 
 		return new File(fileName.toString());
 	}
 
+	/* (non-Javadoc)
+	 * @see ie.lyit.analysis.presentation.file.CsvFileAnalysisPresenter#presentAnalysis(ie.lyit.domain.AnalysisResult)
+	 */
 	@Override
 	public void presentAnalysis(AnalysisResult analysisResult) {
-
 		if (analysisResult == null) {
 			return;
 		}
@@ -29,6 +36,5 @@ public class CsvFileAnalysisAppendingPresenter extends CsvFileAnalysisPresenter 
 
 		writeHeadings(file, analysisResult);
 		writeData(file, analysisResult);
-
 	}
 }
