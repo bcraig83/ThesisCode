@@ -20,20 +20,6 @@ import javax.xml.bind.Unmarshaller;
  */
 public class DirectoryAnalysisParser implements AnalysisParser {
 
-	/**
-	 * The main method. Test method only
-	 * 
-	 * TODO: remove...
-	 * 
-	 * @param args
-	 *            the arguments
-	 */
-	public static void main(String[] args) {
-		AnalysisParser fixture = new DirectoryAnalysisParser("C:\\Users\\Ben Craig\\Dropbox\\College\\Msc Year 3\\Dump\\allReports\\20140208120257\\");
-
-		fixture.parse();
-	}
-
 	private String directoryPath = null;
 
 	/**

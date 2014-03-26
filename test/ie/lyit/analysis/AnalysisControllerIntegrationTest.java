@@ -87,7 +87,6 @@ public class AnalysisControllerIntegrationTest {
 		assertEquals(26.0, batikResult, 0);
 		assertEquals(53.0, c_jdbcResult, 0);
 
-		// TODO: make the project names constants
 		batikResult = totalUniqueVulnerabilitiesMap.get("batik");
 		antlrResult = totalUniqueVulnerabilitiesMap.get("antlr");
 		c_jdbcResult = totalUniqueVulnerabilitiesMap.get("c_jdbc");

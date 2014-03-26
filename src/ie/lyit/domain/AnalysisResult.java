@@ -68,8 +68,6 @@ public class AnalysisResult {
 		stringMap.put(k, v);
 	}
 
-	// TODO: expose a get method that can take a String and return the result
-	// from the Map directly. Makes for a cleaner interface
 	/**
 	 * Gets the counting map.
 	 * 

@@ -80,8 +80,6 @@ public class CsvFileAnalysisPresenter implements AnalysisPresenter {
 			Iterator<?> it = resultMap.entrySet().iterator();
 			while (it.hasNext()) {
 				Map.Entry pairs = (Map.Entry) it.next();
-				// System.out.println(pairs.getKey() + " = " +
-				// pairs.getValue());
 
 				StringBuffer singleRow = new StringBuffer();
 				singleRow.append(pairs.getKey());
@@ -93,8 +91,9 @@ public class CsvFileAnalysisPresenter implements AnalysisPresenter {
 				it.remove(); // avoids a ConcurrentModificationException
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			System.out.println("Error! (CsvFileAnalysisPresenter) : Issue with file input / output...");
 			e.printStackTrace();
+			System.exit(1);
 		}
 	}
 
@@ -116,8 +115,9 @@ public class CsvFileAnalysisPresenter implements AnalysisPresenter {
 
 				FileUtils.writeStringToFile(file, headings.toString(), true);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				System.out.println("Error! (CsvFileAnalysisPresenter) : Issue with file input / output...");
 				e.printStackTrace();
+				System.exit(1);
 			}
 		}
 	}

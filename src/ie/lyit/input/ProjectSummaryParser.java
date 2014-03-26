@@ -71,7 +71,6 @@ public class ProjectSummaryParser {
 
 	private Reader createFileReader() {
 		try {
-			// TODO: make this configurable
 			return new FileReader(new File(path));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

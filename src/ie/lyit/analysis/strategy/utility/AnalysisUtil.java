@@ -107,7 +107,6 @@ public class AnalysisUtil {
 
 	}
 
-	// TODO: Unit tests!
 	/**
 	 * Given an analysis object, return a count of the total number of
 	 * dependencies contained within.
