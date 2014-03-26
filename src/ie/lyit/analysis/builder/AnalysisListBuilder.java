@@ -7,14 +7,20 @@ import ie.lyit.analysis.factory.Factory;
 
 import java.util.List;
 
+/**
+ * The Class AnalysisListBuilder.
+ */
 public class AnalysisListBuilder {
 
 	private List<Analysis> returnList = null;
-
 	private Factory<List<Analysis>> analysisListFactory = new AnalysisListFactory();
-
 	private Factory<Dependencies> dependenciesFactory = null;
 
+	/**
+	 * Builds the List of Analysis objects.
+	 *
+	 * @return the list
+	 */
 	public List<Analysis> build() {
 
 		returnList = analysisListFactory.create();
@@ -26,10 +32,14 @@ public class AnalysisListBuilder {
 		return returnList;
 	}
 
+	/**
+	 * Sets the dependencies factory.
+	 *
+	 * @param dependenciesFactory the dependencies factory
+	 * @return a reference to 'this', allowing for chained method calls.
+	 */
 	public AnalysisListBuilder dependenciesFactory(Factory<Dependencies> dependenciesFactory) {
 		this.dependenciesFactory = dependenciesFactory;
 		return this;
 	}
-
-
 }

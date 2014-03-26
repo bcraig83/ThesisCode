@@ -17,7 +17,6 @@ import ie.lyit.analysis.strategy.VulnerabilityTypeDistributionAnalysisStrategy;
 import ie.lyit.input.AnalysisParser;
 import ie.lyit.input.xml.DirectoryAnalysisParser;
 
-// TODO: Auto-generated Javadoc
 /**
  * A factory for creating AnalysisController objects.
  */
